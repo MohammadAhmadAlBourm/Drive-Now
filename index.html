@@ -1,491 +1,576 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="dark" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DriveNow — Premium Car Rental</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#d4af37",
+                        "surface-container-lowest": "#110e07",
+                        "outline-variant": "#4d4635",
+                        "primary-fixed": "#ffe088",
+                        "tertiary-container": "#b2b3b3",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary": "#2f3131",
+                        "on-primary": "#3c2f00",
+                        "surface-container": "#231f17",
+                        "surface-dim": "#16130b",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary": "#c8c6c5",
+                        "background": "#16130b",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#343027",
+                        "inverse-primary": "#735c00",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "inverse-surface": "#eae1d4",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-variant": "#38342b",
+                        "on-background": "#eae1d4",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface": "#16130b",
+                        "secondary-container": "#474746",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-tint": "#e9c349",
+                        "primary-fixed-dim": "#e9c349",
+                        "error": "#ffb4ab",
+                        "tertiary": "#cecece",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-tertiary-container": "#434546",
+                        "on-secondary": "#313030",
+                        "surface-bright": "#3d392f",
+                        "on-error": "#690005",
+                        "on-surface": "#eae1d4",
+                        "primary": "#f2ca50",
+                        "surface-container-high": "#2d2a21",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1f1b13",
+                        "tertiary-fixed": "#e2e2e2",
+                        "outline": "#99907c",
+                        "on-primary-container": "#554300",
+                        "on-surface-variant": "#d0c5af",
+                        "on-primary-fixed": "#241a00",
+                        "surface-container-highest": "#38342b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1440px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "h3": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h1": ["Manrope"],
+                        "manrope": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
 
-
-    <link rel="stylesheet" href="css/style.css">
+    <title>DriveNow - Premium Car Rentals in Dubai</title>
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 
-<body>
-
-    <!-- Background mesh -->
-    <div class="bg-mesh" aria-hidden="true"></div>
-
-    <!-- ═══════════════ NAVBAR ═══════════════ -->
-    <nav class="nav" id="navbar">
-        <a href="#hero" class="nav-brand">
-            <div class="nav-brand-icon"><i class="fa-solid fa-car-side"></i></div>
-            <span class="nav-brand-text">DriveNow</span>
-        </a>
-
-        <ul class="nav-links">
-            <li><a href="#fleet">Fleet</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-        </ul>
-
-        <div class="nav-right">
-            <a href="#fleet" class="nav-btn">
-                Book Now <i class="fa-solid fa-arrow-right" style="font-size:.65rem"></i>
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-transparent backdrop-blur-md border-b border-white/10">
+        <div class="flex items-center gap-12">
+            <a class="text-2xl font-black text-white tracking-tighter" href="#">DriveNow</a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="font-manrope text-sm tracking-widest uppercase text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 hover:text-white transition-colors duration-300"
+                    href="#">Fleet</a>
+                <a class="font-manrope text-sm tracking-widest uppercase text-white/80 hover:text-white transition-colors duration-300"
+                    href="#">Services</a>
+                <a class="font-manrope text-sm tracking-widest uppercase text-white/80 hover:text-white transition-colors duration-300"
+                    href="#">Locations</a>
+                <a class="font-manrope text-sm tracking-widest uppercase text-white/80 hover:text-white transition-colors duration-300"
+                    href="#">Membership</a>
+            </nav>
         </div>
-    </nav>
-
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#fleet" onclick="closeMobile()">Fleet</a>
-        <a href="#process" onclick="closeMobile()">Process</a>
-        <a href="#pricing" onclick="closeMobile()">Pricing</a>
-        <a href="#reviews" onclick="closeMobile()">Reviews</a>
-        <a href="#fleet" class="nav-btn" onclick="closeMobile()"
-            style="font-size:1rem;padding:16px 40px;width:auto;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))">Book
-            Now</a>
-    </div>
-
-    <!-- ═══════════════ HERO ═══════════════ -->
-    <section id="hero" class="hero">
-
-        <div class="hero-left">
-            <div class="badge">
-                <span class="badge-dot"></span>
-                Premium Car Rental &mdash; UAE
-            </div>
-
-            <h1 class="hero-h1">
-                Drive
-                <span class="line-accent">Different.</span>
-                <span class="line-sub">Book in 60 seconds &mdash; Zero hassle</span>
-            </h1>
-
-            <p class="hero-desc">
-                A conversion-focused rental platform for modern travel. From economy to luxury &mdash; instant booking,
-                transparent pricing, and cars that actually show up.
-            </p>
-
-            <div class="stats rv">
-                <div class="stat">
-                    <div class="stat-n">120<sup>+</sup></div>
-                    <div class="stat-l">Cars Ready</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-n">4.9<sup>/5</sup></div>
-                    <div class="stat-l">Rating</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-n">24<sup>h</sup></div>
-                    <div class="stat-l">Support</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-n">0<sup>+</sup></div>
-                    <div class="stat-l">Hidden Fees</div>
-                </div>
-            </div>
-
-            <div class="trust rv d1">
-                <i class="fa-solid fa-shield-halved"></i>
-                Instant confirmation
-                <span class="trust-sep">&bull;</span>
-                Free cancellation 24h
-                <span class="trust-sep">&bull;</span>
-                No hidden fees
-            </div>
+        <button
+            class="bg-[#D4AF37] text-black font-manrope text-sm tracking-widest uppercase px-6 py-2 rounded-full font-bold scale-95 active:scale-90 transition-transform">Book
+            Now</button>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover opacity-60"
+                data-alt="luxury sports car parked in front of futuristic dubai skyline at sunset with dramatic purple and orange lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt8tC5id5OJQUSHTtqNHf9D8ZYLuyjR90usVNuoW-YaNii9bYq_ha2BevcCQKwlU9MYbaln2MS_gTlzGkLxch0fM-ovQZetzat-VZFLSU_wflCQZJVCHqPBT0aLHzZJ4KCQ74BYmXySdk-KDv4pIo3Ud0ipkz7SDBOlZuze2xiU88sEZeeTLFsUqRFcuSnoUrLgs-pZb2g-xKw4209pf0BYKsJWuj3BiE-U7f2-CCGIb4fWoeAqPPXW_6_wjMqx848wmaN5TSnffY" />
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
         </div>
-
-        <!-- BOOKING FORM -->
-        <div class="hero-right">
-            <div class="booking-wrap rv">
-                <div class="booking-card">
-
-                    <div class="bc-header">
-                        <span class="bc-title">Find Your Car</span>
-                        <span class="bc-step">Step 1 of 3</span>
+        <div class="relative z-10 container mx-auto px- gutter text-center mt-20">
+            <h1 class="font-h1 text-h1 text-white mb-6 max-w-4xl mx-auto">Rent Premium Cars in Seconds</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">Experience unparalleled
+                luxury and speed. Book your elite ride in under 60 seconds.</p>
+            <!-- Booking Widget -->
+            <div
+                class="glass-card max-w-5xl mx-auto p-8 rounded-xl flex flex-wrap md:flex-nowrap items-end gap-6 shadow-2xl">
+                <div class="flex-1 min-w-[200px] text-left">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PICKUP
+                        LOCATION</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary-container">location_on</span>
+                        <input
+                            class="w-full bg-surface-container-lowest border-outline-variant rounded-lg pl-10 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container"
+                            placeholder="Dubai Marina, UAE" type="text" />
                     </div>
-
-                    <div class="bc-body">
-
-                        <!-- Pickup Location -->
-                        <div class="fg">
-                            <div class="fg-label">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Pickup Location
-                            </div>
-                            <input class="fg-input" type="text" id="pickup"
-                                placeholder="Dubai International Airport (DXB)">
-                        </div>
-
-                        <!-- Swap -->
-                        <div class="swap-row">
-                            <button class="swap-btn" id="swapBtn" title="Swap locations">
-                                <i class="fa-solid fa-right-left"></i>
-                            </button>
-                        </div>
-
-                        <!-- Drop-off Location -->
-                        <div class="fg" style="margin-top:10px">
-                            <div class="fg-label">
-                                <i class="fa-solid fa-flag-checkered"></i>
-                                Drop-off Location
-                            </div>
-                            <input class="fg-input" type="text" id="dropoff" placeholder="Sharjah City Center">
-                        </div>
-
-                        <!-- Pickup Date & Time -->
-                        <div class="fg">
-                            <div class="fg-label">
-                                <i class="fa-solid fa-calendar-day"></i>
-                                Pickup Date &amp; Time
-                            </div>
-                            <div class="input-row">
-                                <input class="fg-input" type="date" id="pickupDate">
-                                <input class="fg-input" type="time" id="pickupTime" value="09:00">
-                            </div>
-                        </div>
-
-                        <!-- Return Date & Time -->
-                        <div class="fg">
-                            <div class="fg-label">
-                                <i class="fa-solid fa-calendar-check"></i>
-                                Return Date &amp; Time
-                            </div>
-                            <div class="input-row">
-                                <input class="fg-input" type="date" id="returnDate">
-                                <input class="fg-input" type="time" id="returnTime" value="09:00">
-                            </div>
-                        </div>
-
-                        <button class="search-btn"
-                            onclick="document.getElementById('fleet').scrollIntoView({behavior:'smooth'})">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            Search Available Cars
-                            <i class="fa-solid fa-arrow-right btn-arrow"></i>
-                        </button>
-
-                    </div><!-- /bc-body -->
-
-                    <!-- Top pick -->
-                    <div class="top-pick">
-                        <div>
-                            <div class="tp-lbl"><i class="fa-solid fa-bolt"></i> &nbsp;Today's Top Pick</div>
-                            <div class="tp-name">Tesla Model 3 LR</div>
-                            <div class="tp-spec">Electric &middot; Autopilot &middot; 420 km Range</div>
-                        </div>
-                        <div>
-                            <div class="tp-price">$89<span>/day</span></div>
-                            <div class="tp-avail">&#9679; Available Now</div>
-                        </div>
+                </div>
+                <div class="flex-1 min-w-[200px] text-left">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">DROP-OFF</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary-container">near_me</span>
+                        <input
+                            class="w-full bg-surface-container-lowest border-outline-variant rounded-lg pl-10 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container"
+                            placeholder="DXB Airport" type="text" />
                     </div>
-
-                </div><!-- /booking-card -->
-
-                <!-- Trust bar -->
-                <div class="trust-bar">
-                    <span><i class="fa-solid fa-lock"></i> &nbsp;Secure Payment</span>
-                    <span><i class="fa-solid fa-check-circle"></i> &nbsp;Instant Confirmation</span>
-                    <span><i class="fa-solid fa-rotate-left"></i> &nbsp;Free Cancellation</span>
                 </div>
-
-            </div><!-- /booking-wrap -->
-        </div>
-
-    </section>
-
-    <!-- ═══════════════ FLEET ═══════════════ -->
-    <section id="fleet">
-        <div class="container">
-            <div class="sec-head rv">
-                <div>
-                    <div class="sec-eye">Our Fleet</div>
-                    <h2 class="sec-h">Handpicked For<br>Every <em>Journey</em></h2>
-                    <p class="sec-sub">Economy to premium &mdash; every car vetted, maintained, and ready to roll.</p>
+                <div class="flex-1 min-w-[200px] text-left">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">DATE &amp;
+                        TIME</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary-container">calendar_today</span>
+                        <input
+                            class="w-full bg-surface-container-lowest border-outline-variant rounded-lg pl-10 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container"
+                            type="datetime-local" />
+                    </div>
                 </div>
-                <button class="btn-outline">
-                    <i class="fa-solid fa-sliders"></i> Filter Fleet
+                <button
+                    class="bg-gold text-black h-[42px] px-8 rounded-lg font-bold font-manrope tracking-tight hover:brightness-110 transition-all flex items-center gap-2 whitespace-nowrap">
+                    Find Your Car
+                    <span class="material-symbols-outlined">arrow_forward</span>
                 </button>
             </div>
         </div>
-
-        <div style="max-width:1200px;margin:0 auto;padding:0 40px">
-            <div class="fleet-grid">
-
-                <!-- Car 1 -->
-                <div class="car-card rv">
-                    <div class="card-num">01</div>
-                    <span class="car-tag popular"><i class="fa-solid fa-fire-flame-curved"></i> Most Booked</span>
-                    <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Toyota Corolla" class="car-img">
-                    <div class="car-name">Toyota Corolla 2024</div>
-                    <div class="car-type">Automatic &middot; Petrol &middot; Sedan</div>
-                    <div class="car-specs">
-                        <div class="spec-pill"><i class="fa-solid fa-gas-pump"></i> 18 km/l</div>
-                        <div class="spec-pill"><i class="fa-solid fa-suitcase-rolling"></i> 2 bags</div>
-                        <div class="spec-pill"><i class="fa-solid fa-snowflake"></i> A/C</div>
-                        <div class="spec-pill"><i class="fa-solid fa-users"></i> 5 seats</div>
-                    </div>
-                    <div class="car-footer">
-                        <div class="car-price">$39<small>/day</small></div>
-                        <button class="btn-outline">Book Now <i class="fa-solid fa-arrow-right"
-                                style="font-size:.65rem"></i></button>
-                    </div>
-                </div>
-
-                <!-- Car 2 -->
-                <div class="car-card rv d1">
-                    <div class="card-num">02</div>
-                    <span class="car-tag premium"><i class="fa-solid fa-star"></i> Premium</span>
-                    <img src="https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Range Rover Sport" class="car-img">
-                    <div class="car-name">Range Rover Sport</div>
-                    <div class="car-type">Automatic &middot; Petrol &middot; Luxury SUV</div>
-                    <div class="car-specs">
-                        <div class="spec-pill"><i class="fa-solid fa-gauge-high"></i> Luxury</div>
-                        <div class="spec-pill"><i class="fa-solid fa-suitcase-rolling"></i> 4 bags</div>
-                        <div class="spec-pill"><i class="fa-solid fa-wifi"></i> Wi-Fi</div>
-                        <div class="spec-pill"><i class="fa-solid fa-users"></i> 5 seats</div>
-                    </div>
-                    <div class="car-footer">
-                        <div class="car-price">$129<small>/day</small></div>
-                        <button class="btn-outline">Book Now <i class="fa-solid fa-arrow-right"
-                                style="font-size:.65rem"></i></button>
-                    </div>
-                </div>
-
-                <!-- Car 3 -->
-                <div class="car-card rv d2">
-                    <div class="card-num">03</div>
-                    <span class="car-tag eco"><i class="fa-solid fa-leaf"></i> Eco-Electric</span>
-                    <img src="https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Tesla Model 3" class="car-img">
-                    <div class="car-name">Tesla Model 3</div>
-                    <div class="car-type">Automatic &middot; Electric &middot; Sedan</div>
-                    <div class="car-specs">
-                        <div class="spec-pill"><i class="fa-solid fa-bolt"></i> 420 km</div>
-                        <div class="spec-pill"><i class="fa-solid fa-gauge-high"></i> Autopilot</div>
-                        <div class="spec-pill"><i class="fa-solid fa-plug"></i> Supercharge</div>
-                    </div>
-                    <div class="car-footer">
-                        <div class="car-price">$89<small>/day</small></div>
-                        <button class="btn-outline">Book Now <i class="fa-solid fa-arrow-right"
-                                style="font-size:.65rem"></i></button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </section>
-
-    <!-- ═══════════════ PROCESS ═══════════════ -->
-    <section id="process" class="alt-bg">
-        <div class="container">
-            <div class="rv">
-                <div class="sec-eye">Booking Journey</div>
-                <h2 class="sec-h">Three Steps<br>to the <em>Road</em></h2>
-                <p class="sec-sub">From search to keys in hand — designed to reduce friction and get you moving.</p>
-            </div>
-
-            <div class="process-grid">
-                <div class="process-card rv">
-                    <div class="p-bg-n">01</div>
-                    <div class="p-step">Step 01</div>
-                    <div class="p-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
-                    <div class="p-title">Search</div>
-                    <p class="p-desc">Pick pickup &amp; drop-off, dates, and times. Smart search surfaces the best
-                        matches instantly — no scrolling required.</p>
-                </div>
-
-                <div class="process-card rv d1">
-                    <div class="p-bg-n">02</div>
-                    <div class="p-step">Step 02</div>
-                    <div class="p-icon"><i class="fa-solid fa-car-rear"></i></div>
-                    <div class="p-title">Select</div>
-                    <p class="p-desc">Compare cars by price, specs, and category. Every card is optimised for quick,
-                        confident decisions &mdash; zero guesswork.</p>
-                </div>
-
-                <div class="process-card rv d2">
-                    <div class="p-bg-n">03</div>
-                    <div class="p-step">Step 03</div>
-                    <div class="p-icon"><i class="fa-solid fa-credit-card"></i></div>
-                    <div class="p-title">Drive</div>
-                    <p class="p-desc">Secure payment, instant confirmation. Keys in hand the moment you arrive &mdash;
-                        no waiting, no surprises, ever.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════ PRICING ═══════════════ -->
-    <section id="pricing">
-        <div class="container">
-            <div class="rv">
-                <div class="sec-eye">Pricing</div>
-                <h2 class="sec-h">Plans That Scale<br>With Your <span class="amber">Trips</span></h2>
-                <p class="sec-sub">Daily, weekly, and monthly options with transparent pricing. No hidden fees, ever.
+    <!-- Fleet Section -->
+    <section class="py-xl container mx-auto px-gutter">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="font-h1 text-h1 text-white mb-2">The Elite Fleet</h2>
+                <p class="font-body-md text-on-surface-variant">Curated performance vehicles for the discerning driver.
                 </p>
             </div>
-
-            <div class="pricing-grid">
-
-                <!-- Daily -->
-                <div class="price-card rv">
-                    <div class="price-tier no-top">Daily Plan</div>
-                    <div class="price-amount">$35</div>
-                    <div class="price-period">per day &mdash; quick city trips</div>
-                    <p class="price-desc">Airport pickups, weekend escapes, and short-term needs sorted in minutes.</p>
-                    <ul class="feature-list">
-                        <li><i class="fa-solid fa-check"></i> Economy &amp; compact cars</li>
-                        <li><i class="fa-solid fa-check"></i> 150 km/day included</li>
-                        <li><i class="fa-solid fa-check"></i> Basic insurance</li>
-                        <li><i class="fa-solid fa-check"></i> 24/7 roadside support</li>
-                    </ul>
-                    <button class="price-btn">Choose Daily</button>
+            <div class="flex gap-4">
+                <button
+                    class="px-6 py-2 rounded-full border border-primary-container text-primary-container font-label-caps hover:bg-primary-container hover:text-black transition-all">LUXURY</button>
+                <button
+                    class="px-6 py-2 rounded-full border border-outline-variant text-white font-label-caps hover:border-white transition-all">ELECTRIC</button>
+                <button
+                    class="px-6 py-2 rounded-full border border-outline-variant text-white font-label-caps hover:border-white transition-all">PERFORMANCE</button>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+            <!-- Card 1 -->
+            <div class="glass-card rounded-xl overflow-hidden group">
+                <div class="relative h-64 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="red ferrari roma side profile in high-end showroom with cinematic soft box lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNigo-g45IYYDHgFVJiDE0f7NUKpwAH5ZpH8pVrOWhadwEfTU-JsrI-5J3UeezrnDMRiGrZp5uAC1Icp-bJrjLdOBlxSCvxH8txdntXr0dnM7hy_yAYpzFLh7gz-xRoh4ixyXKAmOQh65bL7LiupvFC3pI2yQQ5Q114RuhjW2WsPy4_0sEROL8gTE64q5tgMOUqvUe6hxv7skgdPGEEQohZuz8hjBEyE1w6oFsx7SIr583hTzPct5sBH7nbWaM2v8NVcvcH6Wa_Is" />
+                    <div class="absolute top-4 right-4 bg-white text-black px-3 py-1 rounded-full font-label-caps">IN
+                        STOCK</div>
                 </div>
-
-                <!-- Weekly (featured) -->
-                <div class="price-card featured rv d1">
-                    <div class="featured-badge">&#9733; Best Value</div>
-                    <div class="price-tier">Weekly Plan</div>
-                    <div class="price-amount blue">$199</div>
-                    <div class="price-period">per week &mdash; business &amp; extended stays</div>
-                    <p class="price-desc">Built for multi-day trips, business travel, and flexible schedules that don't
-                        fit one day.</p>
-                    <ul class="feature-list">
-                        <li><i class="fa-solid fa-check"></i> All car categories</li>
-                        <li><i class="fa-solid fa-check"></i> 1,200 km/week included</li>
-                        <li><i class="fa-solid fa-check"></i> Full insurance options</li>
-                        <li><i class="fa-solid fa-check"></i> Priority support</li>
-                    </ul>
-                    <button class="price-btn prime">Choose Weekly</button>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-h3 text-h3 text-white">Ferrari Roma</h3>
+                            <p class="text-on-surface-variant font-body-md">V8 Turbo Performance</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-primary-container font-technical text-2xl font-bold">$499</span>
+                            <span class="text-on-surface-variant text-xs block">/ DAY</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 py-4 border-y border-white/10 mb-6">
+                        <div class="text-center">
+                            <span
+                                class="material-symbols-outlined text-primary-container block mb-1">airline_seat_recline_extra</span>
+                            <span class="text-xs font-technical text-white">2 SEATS</span>
+                        </div>
+                        <div class="text-center">
+                            <span
+                                class="material-symbols-outlined text-primary-container block mb-1">settings_input_component</span>
+                            <span class="text-xs font-technical text-white">AUTO</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-primary-container block mb-1">speed</span>
+                            <span class="text-xs font-technical text-white">320 KM/H</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full border border-gold text-gold py-3 rounded-lg font-bold font-manrope hover:bg-gold hover:text-black transition-all">SELECT
+                        VEHICLE</button>
                 </div>
-
-                <!-- Monthly -->
-                <div class="price-card rv d2">
-                    <div class="price-tier no-top">Monthly Plan</div>
-                    <div class="price-amount">$699</div>
-                    <div class="price-period">per month &mdash; long-term freedom</div>
-                    <p class="price-desc">For expats, startups, and long projects. A dedicated car without the ownership
-                        commitment.</p>
-                    <ul class="feature-list">
-                        <li><i class="fa-solid fa-check"></i> Premium &amp; SUV focus</li>
-                        <li><i class="fa-solid fa-check"></i> 3,000 km/month included</li>
-                        <li><i class="fa-solid fa-check"></i> Maintenance included</li>
-                        <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
-                    </ul>
-                    <button class="price-btn">Choose Monthly</button>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass-card rounded-xl overflow-hidden group">
+                <div class="relative h-64 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="silver porsche 911 carrera modern sports car on a dark highway at night with blue ambient glow"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdxs9qRcBjxzOcUDkq0hJbjTv7vRbVKFiW5zIzciAkSmjITCbd53V2lpMKXgFV-j2jkrcWNlUZjyh-2VxlXGU_wv0mCTTwWKjkJa_xPR40bnFlk9SYCYCvW8oAEtIVuXftszYxomT64hjJfWBuo1fhu8zbWKM3Wl4bHiZyYGM2W4XSnK9nTk1an_zoxIn8Wfom0Oa0pOhKqSLJAxq_mub22AeBZIF5cs4N7gm1XjgUsrKQNoLE5I-WgqKJFqJqpffFLyNpThAL098" />
+                    <div class="absolute top-4 right-4 bg-white text-black px-3 py-1 rounded-full font-label-caps">BEST
+                        SELLER</div>
                 </div>
-
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-h3 text-h3 text-white">Porsche 911</h3>
+                            <p class="text-on-surface-variant font-body-md">Precision Engineering</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-primary-container font-technical text-2xl font-bold">$389</span>
+                            <span class="text-on-surface-variant text-xs block">/ DAY</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 py-4 border-y border-white/10 mb-6">
+                        <div class="text-center">
+                            <span
+                                class="material-symbols-outlined text-primary-container block mb-1">airline_seat_recline_extra</span>
+                            <span class="text-xs font-technical text-white">2+2 SEATS</span>
+                        </div>
+                        <div class="text-center">
+                            <span
+                                class="material-symbols-outlined text-primary-container block mb-1">settings_input_component</span>
+                            <span class="text-xs font-technical text-white">PDK</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-primary-container block mb-1">bolt</span>
+                            <span class="text-xs font-technical text-white">450 HP</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full border border-gold text-gold py-3 rounded-lg font-bold font-manrope hover:bg-gold hover:text-black transition-all">SELECT
+                        VEHICLE</button>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass-card rounded-xl overflow-hidden group border border-primary-container/30">
+                <div class="relative h-64 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="white lamborghini huracan sto on a mountain road with dramatic low angle perspective"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCal72oQmjAFBcOqq3Sq51fzJ0TT37GbsVEZa4BwxoYP1goCJRgcwqbNqgYW7ma2EHslwzql1Dq1dmNpomwGscqRMj2yrouKGwAYJsDkrfIoJg9LzXJCO5CCiZSPoP22TDO087VTKBYfc0UXZF9Gs1cHK6k4wf5VSm2O7JU6hAr7n84JePgwKnbYcHh-iSGX2NkQbY0na3fOORhO0oV45Z93hJc4_vIMY5ynLIihGLz2dMHwfnvJ4_7WlmqRpScFeIWQRwQ1wmHPXg" />
+                    <div
+                        class="absolute top-4 right-4 bg-primary-container text-black px-3 py-1 rounded-full font-label-caps">
+                        EVO MODEL</div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-h3 text-h3 text-white">Huracan STO</h3>
+                            <p class="text-on-surface-variant font-body-md">Pure V10 Soul</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-primary-container font-technical text-2xl font-bold">$750</span>
+                            <span class="text-on-surface-variant text-xs block">/ DAY</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 py-4 border-y border-white/10 mb-6">
+                        <div class="text-center">
+                            <span
+                                class="material-symbols-outlined text-primary-container block mb-1">airline_seat_recline_extra</span>
+                            <span class="text-xs font-technical text-white">2 SEATS</span>
+                        </div>
+                        <div class="text-center">
+                            <span
+                                class="material-symbols-outlined text-primary-container block mb-1">settings_input_component</span>
+                            <span class="text-xs font-technical text-white">AUTO</span>
+                        </div>
+                        <div class="text-center">
+                            <span
+                                class="material-symbols-outlined text-primary-container block mb-1">rocket_launch</span>
+                            <span class="text-xs font-technical text-white">0-100 3.0S</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full bg-gold text-black py-3 rounded-lg font-bold font-manrope hover:brightness-110 transition-all">SELECT
+                        VEHICLE</button>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- ═══════════════ REVIEWS ═══════════════ -->
-    <section id="reviews" class="alt-bg">
-        <div class="container">
-            <div class="rv">
-                <div class="sec-eye">Customer Reviews</div>
-                <h2 class="sec-h">Trusted by Travelers<br><em>Worldwide</em></h2>
-                <p class="sec-sub">From first-time renters to frequent business travelers — rated consistently top
-                    across the UAE.</p>
-            </div>
-
-            <div class="reviews-grid">
-
-                <div class="review-card rv">
-                    <div class="r-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star-half-stroke"></i>
-                        <span class="score">4.8</span>
+    <!-- How It Works -->
+    <section class="py-xl bg-surface-container-low">
+        <div class="container mx-auto px-gutter text-center">
+            <h2 class="font-h1 text-h1 text-white mb-16">The DriveNow Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-20 h-20 rounded-2xl glass-card flex items-center justify-center mb-6 border-primary-container/20 border">
+                        <span class="material-symbols-outlined text-primary-container text-4xl">search</span>
                     </div>
-                    <p class="r-quote">"The booking flow feels like a real SaaS product. Clean, fast, and intuitive —
-                        exactly what I expect from a modern rental platform."</p>
-                    <div class="r-author">
-                        <div class="r-av">A</div>
-                        <div>
-                            <div class="r-name">Amira Khalid</div>
-                            <div class="r-role">Product Manager, Dubai</div>
-                        </div>
-                    </div>
+                    <h3 class="text-h3 font-h3 text-white mb-4">1. Search Car</h3>
+                    <p class="text-on-surface-variant font-body-md">Browse our curated collection of elite performance
+                        vehicles.</p>
                 </div>
-
-                <div class="review-card rv d1">
-                    <div class="r-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i>
-                        <span class="score">5.0</span>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-20 h-20 rounded-2xl glass-card flex items-center justify-center mb-6 border-primary-container/20 border">
+                        <span class="material-symbols-outlined text-primary-container text-4xl">contactless</span>
                     </div>
-                    <p class="r-quote">"This could plug directly into a production stack. The structure, CTAs, and
-                        layout are startup-ready out of the box."</p>
-                    <div class="r-author">
-                        <div class="r-av">L</div>
-                        <div>
-                            <div class="r-name">Liam Carter</div>
-                            <div class="r-role">Startup Founder, London</div>
-                        </div>
-                    </div>
+                    <h3 class="text-h3 font-h3 text-white mb-4">2. Book Instantly</h3>
+                    <p class="text-on-surface-variant font-body-md">Secure your reservation in seconds with our
+                        streamlined digital process.</p>
                 </div>
-
-                <div class="review-card rv d2">
-                    <div class="r-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-regular fa-star"></i>
-                        <span class="score">4.0</span>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-20 h-20 rounded-2xl glass-card flex items-center justify-center mb-6 border-primary-container/20 border">
+                        <span class="material-symbols-outlined text-primary-container text-4xl">key</span>
                     </div>
-                    <p class="r-quote">"Pricing is crystal clear and cars are easy to compare — a very polished UX that
-                        makes it effortless to recommend to clients."</p>
-                    <div class="r-author">
-                        <div class="r-av">S</div>
-                        <div>
-                            <div class="r-name">Sara Al Mansoori</div>
-                            <div class="r-role">Travel Consultant, Abu Dhabi</div>
-                        </div>
-                    </div>
+                    <h3 class="text-h3 font-h3 text-white mb-4">3. Drive &amp; Enjoy</h3>
+                    <p class="text-on-surface-variant font-body-md">Experience the thrill of the open road with
+                        white-glove delivery.</p>
                 </div>
-
             </div>
         </div>
     </section>
-
-    <!-- ═══════════════ FOOTER ═══════════════ -->
-    <footer>
-        <div class="container">
-            <div class="ft">
-                <a href="#hero" class="ft-brand">
-                    <div class="ft-brand-icon"><i class="fa-solid fa-car-side"></i></div>
-                    DriveNow
-                </a>
-                <div class="ft-links">
-                    <a href="#fleet">Fleet</a>
-                    <a href="#process">Process</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#reviews">Reviews</a>
-                    <a href="#">Privacy</a>
+    <!-- Pricing Section -->
+    <section class="py-xl container mx-auto px-gutter">
+        <div class="text-center mb-16">
+            <h2 class="font-h1 text-h1 text-white mb-4">Exclusive Membership</h2>
+            <p class="font-body-md text-on-surface-variant">Choose the tier that fuels your lifestyle.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <!-- Daily -->
+            <div class="glass-card p-8 rounded-xl border border-white/5 h-fit">
+                <h4 class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase">Daily Access</h4>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-white font-technical">$499</span>
+                    <span class="text-on-surface-variant">/ day</span>
                 </div>
-                <div class="ft-copy">© <span id="yr"></span> DriveNow. All rights reserved.</div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3 text-on-surface-variant"><span
+                            class="material-symbols-outlined text-primary-container">check</span> 250km Included</li>
+                    <li class="flex items-center gap-3 text-on-surface-variant"><span
+                            class="material-symbols-outlined text-primary-container">check</span> Standard Insurance
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant"><span
+                            class="material-symbols-outlined text-primary-container">check</span> 24/7 Support</li>
+                </ul>
+                <button
+                    class="w-full py-3 border border-outline-variant rounded-lg text-white font-bold font-manrope hover:border-white transition-all">Get
+                    Started</button>
             </div>
+            <!-- Weekly -->
+            <div
+                class="glass-card p-10 rounded-xl border-2 border-primary-container transform scale-105 relative bg-gradient-to-br from-primary-container/5 to-transparent">
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary-container text-black px-4 py-1 rounded-full font-label-caps text-[10px]">
+                    BEST VALUE</div>
+                <h4 class="font-label-caps text-label-caps text-primary-container mb-4 uppercase">Elite Weekly</h4>
+                <div class="mb-8">
+                    <span class="text-5xl font-bold text-white font-technical">$2,999</span>
+                    <span class="text-on-surface-variant">/ week</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3 text-white font-bold"><span
+                            class="material-symbols-outlined text-primary-container">check</span> 1500km Included</li>
+                    <li class="flex items-center gap-3 text-white"><span
+                            class="material-symbols-outlined text-primary-container">check</span> Premium Insurance</li>
+                    <li class="flex items-center gap-3 text-white"><span
+                            class="material-symbols-outlined text-primary-container">check</span> Free Delivery</li>
+                    <li class="flex items-center gap-3 text-white"><span
+                            class="material-symbols-outlined text-primary-container">check</span> 1x Vehicle Swap</li>
+                </ul>
+                <button
+                    class="w-full py-4 bg-primary-container text-black rounded-lg font-bold font-manrope hover:brightness-110 transition-all shadow-xl">Join
+                    Elite</button>
+            </div>
+            <!-- Monthly -->
+            <div class="glass-card p-8 rounded-xl border border-white/5 h-fit">
+                <h4 class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase">Corporate Monthly
+                </h4>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-white font-technical">$9,999</span>
+                    <span class="text-on-surface-variant">/ month</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3 text-on-surface-variant"><span
+                            class="material-symbols-outlined text-primary-container">check</span> Unlimited km</li>
+                    <li class="flex items-center gap-3 text-on-surface-variant"><span
+                            class="material-symbols-outlined text-primary-container">check</span> Full Suite Insurance
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant"><span
+                            class="material-symbols-outlined text-primary-container">check</span> Personal Concierge
+                    </li>
+                </ul>
+                <button
+                    class="w-full py-3 border border-outline-variant rounded-lg text-white font-bold font-manrope hover:border-white transition-all">Get
+                    Started</button>
+            </div>
+        </div>
+    </section>
+    <!-- Reviews Section -->
+    <section class="py-xl bg-surface-container-lowest">
+        <div class="container mx-auto px-gutter overflow-hidden">
+            <h2 class="font-h1 text-h1 text-white mb-12 text-center">Elite Feedback</h2>
+            <div class="flex gap-8 overflow-x-auto pb-8 scrollbar-hide">
+                <!-- Review 1 -->
+                <div class="min-w-[400px] glass-card p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-white italic mb-8 font-body-lg">"The service was impeccable. Picked up the Porsche
+                        911 at DXB and it was brand new. DriveNow redefined luxury car rental for me."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary-container">
+                            JS</div>
+                        <div>
+                            <p class="font-bold text-white">James Sterling</p>
+                            <p class="text-xs text-on-surface-variant">CEO, TechVanguard</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="min-w-[400px] glass-card p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-white italic mb-8 font-body-lg">"Renting the Lamborghini for the weekend was the
+                        highlight of our trip to Dubai. The 60-second booking claim is real!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary-container">
+                            AL</div>
+                        <div>
+                            <p class="font-bold text-white">Amara Ling</p>
+                            <p class="text-xs text-on-surface-variant">Luxury Lifestyle Influencer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="min-w-[400px] glass-card p-8 rounded-xl">
+                    <div class="flex gap-1 mb-4">
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-white italic mb-8 font-body-lg">"Best fleet in the UAE. Period. The cars are
+                        maintained to industrial standards. Truly a premium experience from start to finish."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary-container">
+                            MK</div>
+                        <div>
+                            <p class="font-bold text-white">Mohammed Khalid</p>
+                            <p class="text-xs text-on-surface-variant">Real Estate Investor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer
+        class="bg-[#1A1A1A] w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto border-t border-white/5">
+        <div class="mb-8 md:mb-0">
+            <h5 class="text-xl font-bold text-[#D4AF37] mb-2">DriveNow</h5>
+            <p class="font-manrope text-xs text-white/60 max-w-xs mb-4">Elite Automotive services across the United Arab
+                Emirates. Luxury, performance, and efficiency at your fingertips.</p>
+            <div class="flex gap-4">
+                <span
+                    class="material-symbols-outlined text-white/40 hover:text-white cursor-pointer transition-colors">language</span>
+                <span
+                    class="material-symbols-outlined text-white/40 hover:text-white cursor-pointer transition-colors">public</span>
+                <span
+                    class="material-symbols-outlined text-white/40 hover:text-white cursor-pointer transition-colors">share</span>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-12 text-center md:text-left">
+            <div class="flex flex-col gap-2">
+                <h6 class="font-label-caps text-white text-xs mb-2">COMPANY</h6>
+                <a class="font-manrope text-xs text-white/40 hover:text-[#D4AF37] transition-colors" href="#">Privacy
+                    Policy</a>
+                <a class="font-manrope text-xs text-white/40 hover:text-[#D4AF37] transition-colors" href="#">Terms of
+                    Service</a>
+                <a class="font-manrope text-xs text-white/40 hover:text-[#D4AF37] transition-colors" href="#">Fleet
+                    Guide</a>
+                <a class="font-manrope text-xs text-white/40 hover:text-[#D4AF37] transition-colors" href="#">Contact
+                    Us</a>
+            </div>
+            <div class="flex flex-col gap-2">
+                <h6 class="font-label-caps text-white text-xs mb-2">LOCATION</h6>
+                <p class="font-manrope text-xs text-white/40">Dubai Marina Plaza, Floor 14</p>
+                <p class="font-manrope text-xs text-white/40">Dubai, UAE</p>
+                <p class="font-manrope text-xs text-white/40">+971 (0) 4 555 1234</p>
+            </div>
+        </div>
+        <div
+            class="mt-12 md:mt-0 text-center md:text-right border-t md:border-t-0 border-white/5 pt-8 md:pt-0 w-full md:w-auto">
+            <p class="font-manrope text-xs text-white/60">© 2024 DriveNow Elite Automotive. All rights reserved.</p>
+            <p class="font-manrope text-[10px] text-white/20 mt-1 uppercase tracking-widest">Precision Performance
+                Experience</p>
         </div>
     </footer>
-
-    <!-- Scroll top -->
-    <button class="scrolltop" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
-    <script src="js/script.js"></script>
 </body>
 
 </html>
